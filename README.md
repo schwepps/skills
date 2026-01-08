@@ -73,6 +73,19 @@ Then reference in your project's `CLAUDE.md`:
 @seo-technical-audit/SKILL.md
 ```
 
+### Browser Download (No Git Required)
+
+Download individual skills directly as ZIP files - no git or command line needed:
+
+| Skill | Direct Download |
+|-------|-----------------|
+| SEO Technical Audit | [Download ZIP](https://download-directory.github.io/?url=https://github.com/schwepps/skills/tree/main/seo-technical-audit) |
+| SEO Content Audit | [Download ZIP](https://download-directory.github.io/?url=https://github.com/schwepps/skills/tree/main/seo-content-audit) |
+| GEO/AEO Optimization | [Download ZIP](https://download-directory.github.io/?url=https://github.com/schwepps/skills/tree/main/geo-aeo-optimization) |
+| Suno Music Creator | [Download ZIP](https://download-directory.github.io/?url=https://github.com/schwepps/skills/tree/main/suno-music-creator) |
+
+*Powered by [download-directory.github.io](https://download-directory.github.io)*
+
 ## Project Structure
 
 ```
