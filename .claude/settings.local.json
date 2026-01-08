@@ -1,0 +1,49 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__sequential-thinking__*",
+      "mcp__context7__*",
+      "mcp__serena__*",
+      "mcp__chrome-devtools__*",
+      "mcp__playwright__*",
+      "mcp__figma-dev__*",
+      "mcp__lagoon__*",
+
+      "Bash(pnpm:*)",
+      "Bash(npm:*)",
+      "Bash(npx:*)",
+      "Bash(git:*)",
+      "Bash(gh:*)",
+      "Bash(tsc:*)",
+      "Bash(rg:*)",
+      "Bash(grep:*)",
+      "Bash(find:*)",
+      "Bash(curl:*)",
+      "Bash(cat:*)",
+      "Bash(echo:*)",
+      "Bash(sed:*)"
+    ],
+    "deny": [
+      "Bash(rm:*)",
+      "Bash(rmdir:*)",
+      "Bash(sudo:*)",
+      "Bash(chmod:*)",
+      "Bash(chown:*)",
+      "Bash(kill:*)",
+      "Bash(killall:*)",
+      "Bash(pkill:*)",
+      "Bash(dd:*)",
+      "Bash(mkfs:*)",
+      "Bash(shred:*)",
+      "Bash(truncate:*)",
+
+      "Bash(git reset --hard:*)",
+      "Bash(git clean:*)",
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
+
+      "mcp__serena__delete_memory",
+      "mcp__serena__execute_shell_command"
+    ]
+  }
+}

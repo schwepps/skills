@@ -1,0 +1,57 @@
+{
+  "name": "skills",
+  "version": "1.0.0",
+  "description": "Claude Code skills: SEO audits, AI search optimization, music creation.",
+  "author": "schwepps",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/schwepps/skills.git"
+  },
+  "plugins": [
+    {
+      "name": "seo-technical-audit",
+      "type": "skill",
+      "path": "seo-technical-audit",
+      "description": "Technical SEO: crawlability, Core Web Vitals, AI crawlers",
+      "category": "seo",
+      "tags": ["seo", "technical-seo", "audit", "core-web-vitals", "crawlability"]
+    },
+    {
+      "name": "seo-content-audit",
+      "type": "skill",
+      "path": "seo-content-audit",
+      "description": "On-page SEO and content quality scoring",
+      "category": "seo",
+      "tags": ["seo", "content-audit", "on-page-seo", "e-e-a-t", "keyword-optimization"]
+    },
+    {
+      "name": "geo-aeo-optimization",
+      "type": "skill",
+      "path": "geo-aeo-optimization",
+      "description": "AI search optimization for ChatGPT, Perplexity, Google AI",
+      "category": "seo",
+      "tags": ["geo", "aeo", "ai-search", "chatgpt", "perplexity", "featured-snippets"]
+    },
+    {
+      "name": "suno-music-creator",
+      "type": "skill",
+      "path": "suno-music-creator",
+      "description": "Music creation with Suno AI V5",
+      "category": "music",
+      "tags": ["music", "suno", "ai-music", "music-creation", "song-creation", "audio-generation"]
+    }
+  ],
+  "categories": {
+    "seo": {
+      "name": "SEO & AI Search",
+      "description": "Search engine optimization and AI search visibility tools",
+      "marketplace": "marketplace-seo.json"
+    },
+    "music": {
+      "name": "Music Creation",
+      "description": "AI-powered music and audio generation tools",
+      "marketplace": "marketplace-music.json"
+    }
+  }
+}
