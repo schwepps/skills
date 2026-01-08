@@ -11,3 +11,6 @@ Thumbs.db
 *~
 .idea/
 .vscode/
+
+# Claude Code user settings
+.claude/
