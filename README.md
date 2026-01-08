@@ -10,7 +10,7 @@
 
 ### Claude Code
 ```bash
-/install github:schwepps/skills
+/plugin marketplace add schwepps/skills
 ```
 
 ### Claude Desktop / Other Tools
