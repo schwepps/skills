@@ -1,0 +1,21 @@
+{
+  "name": "skills-tooling",
+  "version": "1.0.0",
+  "description": "Developer tools and automation skills for Claude Code.",
+  "author": "schwepps",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/schwepps/skills.git"
+  },
+  "plugins": [
+    {
+      "name": "install-skill",
+      "type": "skill",
+      "path": "install-skill",
+      "description": "Automate skill package installation and marketplace registration",
+      "category": "tooling",
+      "tags": ["automation", "skills", "marketplace", "installation", "developer-tools"]
+    }
+  ]
+}

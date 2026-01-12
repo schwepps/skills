@@ -1,0 +1,21 @@
+{
+  "name": "skills-security",
+  "version": "1.0.0",
+  "description": "Smart contract security skills for Claude Code: auditing, vulnerability detection, and optimization.",
+  "author": "schwepps",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/schwepps/skills.git"
+  },
+  "plugins": [
+    {
+      "name": "solidity-auditor",
+      "type": "skill",
+      "path": "solidity-auditor",
+      "description": "Professional smart contract security audits with OWASP Top 10 coverage",
+      "category": "security",
+      "tags": ["solidity", "smart-contracts", "security", "audit", "blockchain", "ethereum", "defi", "web3"]
+    }
+  ]
+}

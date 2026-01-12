@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**Documentation-based skills** for Claude Code, Claude Desktop, and any AI tool supporting skills. Specialized workflows for SEO audits, AI search optimization, and music creation.
+**Documentation-based skills** for Claude Code, Claude Desktop, and any AI tool supporting skills. Specialized workflows for SEO audits, AI search optimization, music creation, smart contract security, and developer tools.
 
 ---
 
@@ -30,6 +30,8 @@ Find packaged skills in `dist/`, then add to your tool's skills directory.
 | **[seo-content-audit](seo-content-audit/)** | On-page SEO scoring with E-E-A-T analysis |
 | **[geo-aeo-optimization](geo-aeo-optimization/)** | Optimize for ChatGPT, Perplexity, Google AI Overviews |
 | **[suno-music-creator](suno-music-creator/)** | Professional music creation with Suno AI V5 |
+| **[solidity-auditor](solidity-auditor/)** | Smart contract security audits with OWASP Top 10 coverage |
+| **[install-skill](install-skill/)** | Automate skill package installation and marketplace registration |
 
 ## Usage Examples
 
@@ -44,6 +46,20 @@ Find packaged skills in `dist/`, then add to your tool's skills directory.
 ```
 "Create an upbeat pop track for a product video"
 "Compose ambient music for a meditation app"
+```
+
+### Security
+```
+"Audit this Solidity contract for vulnerabilities"
+"Review my smart contract's gas usage"
+"Check this DeFi protocol for reentrancy issues"
+```
+
+### Tooling
+```
+"Install the skill from dist/my-skill.skill"
+"Add a new skill to the marketplace"
+"Unpack and register this skill package"
 ```
 
 ## How Skills Work
@@ -83,6 +99,8 @@ Download individual skills directly as ZIP files - no git or command line needed
 | SEO Content Audit | [Download ZIP](https://download-directory.github.io/?url=https://github.com/schwepps/skills/tree/main/seo-content-audit) |
 | GEO/AEO Optimization | [Download ZIP](https://download-directory.github.io/?url=https://github.com/schwepps/skills/tree/main/geo-aeo-optimization) |
 | Suno Music Creator | [Download ZIP](https://download-directory.github.io/?url=https://github.com/schwepps/skills/tree/main/suno-music-creator) |
+| Solidity Auditor | [Download ZIP](https://download-directory.github.io/?url=https://github.com/schwepps/skills/tree/main/solidity-auditor) |
+| Install Skill | [Download ZIP](https://download-directory.github.io/?url=https://github.com/schwepps/skills/tree/main/install-skill) |
 
 *Powered by [download-directory.github.io](https://download-directory.github.io)*
 
@@ -98,6 +116,8 @@ skills/
 ├── seo-content-audit/
 ├── geo-aeo-optimization/
 ├── suno-music-creator/
+├── solidity-auditor/
+├── install-skill/
 └── CLAUDE.md                # Contributor guide
 ```
 
