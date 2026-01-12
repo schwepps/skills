@@ -76,20 +76,30 @@ Add new skills to `.claude-plugin/marketplace.json`:
 
 ```json
 {
+  "owner": {
+    "name": "schwepps",
+    "url": "https://github.com/schwepps"
+  },
+  "name": "skills",
+  "version": "1.0.0",
+  "description": "Repository description",
+  "license": "MIT",
   "plugins": [
     {
       "name": "skill-name",
-      "type": "skill",
-      "path": "skill-name",
-      "description": "One-line description of the skill",
-      "category": "seo",
-      "tags": ["tag1", "tag2", "tag3"]
+      "source": "./skill-name",
+      "description": "One-line description of the skill"
     }
   ]
 }
 ```
 
-Also add to the appropriate category marketplace (`marketplace-seo.json` or `marketplace-music.json`).
+**Important schema requirements**:
+- `owner` must be an object with `name` and `url` fields
+- `source` paths must start with `./`
+- Only `name`, `source`, and `description` are valid plugin fields
+
+Also add to the appropriate category marketplace (`marketplace-seo.json`, `marketplace-music.json`, etc.).
 
 ## Conventions
 

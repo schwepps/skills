@@ -1,8 +1,11 @@
 {
+  "owner": {
+    "name": "schwepps",
+    "url": "https://github.com/schwepps"
+  },
   "name": "skills-seo",
   "version": "1.0.0",
   "description": "SEO skills for Claude Code: technical audits, content analysis, and AI search optimization.",
-  "author": "schwepps",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -11,27 +14,18 @@
   "plugins": [
     {
       "name": "seo-technical-audit",
-      "type": "skill",
-      "path": "seo-technical-audit",
-      "description": "Technical SEO: crawlability, Core Web Vitals, AI crawlers",
-      "category": "seo",
-      "tags": ["seo", "technical-seo", "audit", "core-web-vitals", "crawlability"]
+      "source": "./seo-technical-audit",
+      "description": "Technical SEO: crawlability, Core Web Vitals, AI crawlers"
     },
     {
       "name": "seo-content-audit",
-      "type": "skill",
-      "path": "seo-content-audit",
-      "description": "On-page SEO and content quality scoring",
-      "category": "seo",
-      "tags": ["seo", "content-audit", "on-page-seo", "e-e-a-t", "keyword-optimization"]
+      "source": "./seo-content-audit",
+      "description": "On-page SEO and content quality scoring"
     },
     {
       "name": "geo-aeo-optimization",
-      "type": "skill",
-      "path": "geo-aeo-optimization",
-      "description": "AI search optimization for ChatGPT, Perplexity, Google AI",
-      "category": "seo",
-      "tags": ["geo", "aeo", "ai-search", "chatgpt", "perplexity", "featured-snippets"]
+      "source": "./geo-aeo-optimization",
+      "description": "AI search optimization for ChatGPT, Perplexity, Google AI"
     }
   ]
 }

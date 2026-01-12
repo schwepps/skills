@@ -1,8 +1,11 @@
 {
+  "owner": {
+    "name": "schwepps",
+    "url": "https://github.com/schwepps"
+  },
   "name": "skills-music",
   "version": "1.0.0",
   "description": "Music creation skills for Claude Code: AI-powered song and playlist generation.",
-  "author": "schwepps",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -11,11 +14,8 @@
   "plugins": [
     {
       "name": "suno-music-creator",
-      "type": "skill",
-      "path": "suno-music-creator",
-      "description": "Music creation with Suno AI V5",
-      "category": "music",
-      "tags": ["music", "suno", "ai-music", "music-creation", "song-creation", "audio-generation"]
+      "source": "./suno-music-creator",
+      "description": "Music creation with Suno AI V5"
     }
   ]
 }
