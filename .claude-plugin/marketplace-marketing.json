@@ -1,0 +1,21 @@
+{
+  "owner": {
+    "name": "schwepps",
+    "url": "https://github.com/schwepps"
+  },
+  "name": "skills-marketing",
+  "version": "1.0.0",
+  "description": "Marketing and personal branding skills for Claude Code.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/schwepps/skills.git"
+  },
+  "plugins": [
+    {
+      "name": "linkedin-personal-branding",
+      "source": "./linkedin-personal-branding",
+      "description": "LinkedIn profile analysis, personal branding audit, and visibility optimization"
+    }
+  ]
+}

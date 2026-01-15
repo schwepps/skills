@@ -5,7 +5,7 @@
   },
   "name": "skills",
   "version": "1.0.0",
-  "description": "Claude Code skills: SEO audits, AI search optimization, music creation, smart contract security, developer tools.",
+  "description": "Claude Code skills: SEO audits, AI search optimization, music creation, smart contract security, LinkedIn personal branding, developer tools.",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -41,6 +41,11 @@
       "name": "install-skill",
       "source": "./install-skill",
       "description": "Automate skill package installation and marketplace registration"
+    },
+    {
+      "name": "linkedin-personal-branding",
+      "source": "./linkedin-personal-branding",
+      "description": "LinkedIn profile analysis, personal branding audit, and visibility optimization"
     }
   ]
 }

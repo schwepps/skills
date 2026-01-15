@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**Documentation-based skills** for Claude Code, Claude Desktop, and any AI tool supporting skills. Specialized workflows for SEO audits, AI search optimization, music creation, smart contract security, and developer tools.
+**Documentation-based skills** for Claude Code, Claude Desktop, and any AI tool supporting skills. Specialized workflows for SEO audits, AI search optimization, music creation, smart contract security, LinkedIn personal branding, and developer tools.
 
 ---
 
@@ -32,6 +32,7 @@ Find packaged skills in `dist/`, then add to your tool's skills directory.
 | **[suno-music-creator](suno-music-creator/)** | Professional music creation with Suno AI V5 |
 | **[solidity-auditor](solidity-auditor/)** | Smart contract security audits with OWASP Top 10 coverage |
 | **[install-skill](install-skill/)** | Automate skill package installation and marketplace registration |
+| **[linkedin-personal-branding](linkedin-personal-branding/)** | LinkedIn profile analysis, personal branding audit, and visibility optimization |
 
 ## Usage Examples
 
@@ -53,6 +54,13 @@ Find packaged skills in `dist/`, then add to your tool's skills directory.
 "Audit this Solidity contract for vulnerabilities"
 "Review my smart contract's gas usage"
 "Check this DeFi protocol for reentrancy issues"
+```
+
+### Marketing
+```
+"Audit my LinkedIn profile for personal branding"
+"Optimize my LinkedIn headline and About section"
+"Analyze my LinkedIn engagement and content strategy"
 ```
 
 ### Tooling
@@ -101,6 +109,7 @@ Download individual skills directly as ZIP files - no git or command line needed
 | Suno Music Creator | [Download ZIP](https://download-directory.github.io/?url=https://github.com/schwepps/skills/tree/main/suno-music-creator) |
 | Solidity Auditor | [Download ZIP](https://download-directory.github.io/?url=https://github.com/schwepps/skills/tree/main/solidity-auditor) |
 | Install Skill | [Download ZIP](https://download-directory.github.io/?url=https://github.com/schwepps/skills/tree/main/install-skill) |
+| LinkedIn Personal Branding | [Download ZIP](https://download-directory.github.io/?url=https://github.com/schwepps/skills/tree/main/linkedin-personal-branding) |
 
 *Powered by [download-directory.github.io](https://download-directory.github.io)*
 
@@ -118,6 +127,7 @@ skills/
 ├── suno-music-creator/
 ├── solidity-auditor/
 ├── install-skill/
+├── linkedin-personal-branding/
 └── CLAUDE.md                # Contributor guide
 ```
 
