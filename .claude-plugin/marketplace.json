@@ -46,6 +46,11 @@
       "name": "linkedin-personal-branding",
       "source": "./linkedin-personal-branding",
       "description": "LinkedIn profile analysis, personal branding audit, and visibility optimization"
+    },
+    {
+      "name": "linkedin-roast",
+      "source": "./linkedin-roast",
+      "description": "LinkedIn profile roasting with savage but friendly comedy burns"
     }
   ]
 }

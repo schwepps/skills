@@ -87,23 +87,25 @@ Identify what type of LinkedIn work is needed:
 
 Use **Claude for Chrome** browser tools to access the LinkedIn profile. The user should have LinkedIn open in their browser.
 
-**Claude for Chrome Tools for LinkedIn Analysis:**
+**Chrome DevTools MCP Tools for LinkedIn Analysis:**
 
-| Tool | Use For |
-|------|---------|
-| `tabs_context_mcp` | Get current browser tabs, find LinkedIn tab |
-| `read_page` | Extract accessibility tree of profile sections |
-| `find` | Locate specific elements (e.g., "headline", "about section") |
-| `get_page_text` | Extract all text content from profile |
-| `computer` (screenshot) | Capture visual elements (photo, banner) |
-| `navigate` | Navigate to specific profile sections |
+| Tool | MCP Tool Name | Use For |
+|------|---------------|---------|
+| List Pages | `mcp__chrome-devtools__list_pages` | Get browser tabs, find LinkedIn tab by URL |
+| Select Page | `mcp__chrome-devtools__select_page` | Select LinkedIn tab for operations |
+| Snapshot | `mcp__chrome-devtools__take_snapshot` | Extract accessibility tree with element UIDs |
+| Screenshot | `mcp__chrome-devtools__take_screenshot` | Capture visual elements (photo, banner) |
+| Navigate | `mcp__chrome-devtools__navigate_page` | Navigate to URLs or back/forward |
+| Click | `mcp__chrome-devtools__click` | Click elements using UID from snapshot |
+| Wait For | `mcp__chrome-devtools__wait_for` | Wait for text to appear (lazy content) |
+| Hover | `mcp__chrome-devtools__hover` | Scroll element into view |
 
 **Workflow:**
-1. Call `tabs_context_mcp` to get the LinkedIn profile tab ID
-2. Use `read_page` with the tab ID to extract profile structure
-3. Use `get_page_text` for full text extraction
-4. Use `computer` with `screenshot` action to analyze visual elements
-5. Navigate to sub-sections (Experience details, Skills, etc.) as needed
+1. Call `mcp__chrome-devtools__list_pages` → find pageId where URL contains "linkedin.com/in/"
+2. Call `mcp__chrome-devtools__select_page` with the pageId to focus LinkedIn tab
+3. Call `mcp__chrome-devtools__take_snapshot` → returns accessibility tree with UIDs (e.g., `[uid1]`, `[uid2]`)
+4. Call `mcp__chrome-devtools__take_screenshot` → analyze profile photo and banner quality
+5. For lazy-loaded sections: `mcp__chrome-devtools__hover` to scroll → re-snapshot to get new content
 
 Key sections to analyze:
 
@@ -475,99 +477,264 @@ Rapid assessment checklist with priority actions.
 **User:** "Analyze my LinkedIn profile and give me recommendations"
 **Steps:**
 1. User has their LinkedIn profile open in Chrome
-2. Call `tabs_context_mcp` to get tab context
-3. Use `read_page` with tabId to extract profile structure
-4. Use `get_page_text` for full content extraction
-5. Take `screenshot` to analyze photo and banner
-6. Load `references/scoring_framework.md` for scoring
-7. Score each profile element
-8. Load `references/metrics_benchmarks.md` for comparison
-9. Use `assets/profile_audit_template.md` for report
-10. Provide prioritized recommendations
+2. Call `mcp__chrome-devtools__list_pages` → find pageId for LinkedIn tab
+3. Call `mcp__chrome-devtools__select_page` with pageId
+4. Call `mcp__chrome-devtools__take_snapshot` → extract profile structure with UIDs
+5. Call `mcp__chrome-devtools__take_screenshot` → analyze photo and banner visually
+6. Load `references/scoring_framework.md` for scoring criteria
+7. Score each profile element (Visual, Headline, About, Experience, Skills, etc.)
+8. Load `references/metrics_benchmarks.md` for industry comparison
+9. Use `assets/profile_audit_template.md` for report format
+10. Provide prioritized recommendations with quick wins first
 
 ### Example 2: Headline Optimization
 **User:** "Help me improve my LinkedIn headline"
 **Steps:**
-1. Use `find` with query "headline" to locate headline element
-2. Extract current headline text
-3. Identify target audience and value proposition
-4. Apply headline formula from SKILL.md
-5. Provide 3-5 optimized alternatives
-6. Include relevant keywords
+1. Call `mcp__chrome-devtools__take_snapshot` → find headline in accessibility tree
+2. Extract current headline text from snapshot
+3. Identify target audience and value proposition from profile context
+4. Apply headline formula from SKILL.md (Who + Problems Solved + Benefits)
+5. Provide 3-5 optimized alternatives with keywords
+6. Include industry-specific examples
 
 ### Example 3: Content Strategy
 **User:** "Help me create a LinkedIn content strategy"
 **Steps:**
-1. Navigate to user's activity section
-2. Use `read_page` to extract recent posts
-3. Analyze posting patterns and engagement
-4. Load `references/content_strategy.md`
-5. Define content pillars based on expertise
-6. Create posting schedule
-7. Recommend content formats
-8. Set engagement targets
+1. Call `mcp__chrome-devtools__navigate_page` (url: linkedin.com/in/[user]/recent-activity/)
+2. Call `mcp__chrome-devtools__wait_for` (text: "reactions") → wait for posts to load
+3. Call `mcp__chrome-devtools__take_snapshot` → extract recent posts data
+4. Analyze posting patterns and engagement metrics
+5. Load `references/content_strategy.md` for strategy framework
+6. Define content pillars based on expertise
+7. Create posting schedule with optimal times
+8. Set engagement targets based on industry benchmarks
 
 ### Example 4: Quick Profile Check
 **User:** "Take a quick look at my LinkedIn profile"
 **Steps:**
-1. Call `tabs_context_mcp` to get LinkedIn tab
-2. Use `read_page` for quick structure scan
-3. Check key elements (photo, headline, about, experience)
-4. Use `assets/quick_review_template.md`
-5. Provide top 5 quick wins
+1. Call `mcp__chrome-devtools__list_pages` → find LinkedIn tab
+2. Call `mcp__chrome-devtools__select_page` → focus the tab
+3. Call `mcp__chrome-devtools__take_snapshot` → quick structure scan
+4. Check key elements (photo, headline, about, experience) in snapshot
+5. Use `assets/quick_review_template.md` for rapid assessment
+6. Provide top 5 quick wins with specific actions
 
-## Claude for Chrome Specific Workflows
+### Example 5: Deep Analytics Review
+**User:** "Analyze my LinkedIn analytics and engagement metrics"
+**Steps:**
+1. Call `mcp__chrome-devtools__navigate_page` (url: "https://www.linkedin.com/analytics/")
+2. Call `mcp__chrome-devtools__wait_for` (text: "Profile viewers") → verify dashboard loads
+3. Call `mcp__chrome-devtools__take_snapshot` → capture analytics overview
+4. Navigate to SSI: `mcp__chrome-devtools__navigate_page` (url: "https://www.linkedin.com/sales/ssi")
+5. Call `mcp__chrome-devtools__wait_for` (text: "Social Selling Index") → check access
+6. Call `mcp__chrome-devtools__take_snapshot` → capture SSI scores (or note unavailable)
+7. Navigate back to Activity to analyze recent posts
+8. Calculate engagement rate from visible metrics using formula
+9. Compare against industry benchmarks from `references/metrics_benchmarks.md`
+10. Provide improvement recommendations with specific targets
 
-### Extracting Profile Data
+## Chrome DevTools MCP Workflows
 
-```
-Step 1: Get tab context
-→ tabs_context_mcp (createIfEmpty: false)
-→ Returns tabId for LinkedIn profile tab
-
-Step 2: Read profile structure  
-→ read_page (tabId: [id], filter: "all")
-→ Returns accessibility tree with all profile sections
-
-Step 3: Get text content
-→ get_page_text (tabId: [id])
-→ Returns full text for analysis
-
-Step 4: Visual analysis
-→ computer (action: "screenshot", tabId: [id])
-→ Capture profile photo and banner for quality assessment
-```
-
-### Navigating Profile Sections
-
-To analyze detailed sections:
-```
-→ find (query: "experience section", tabId: [id])
-→ computer (action: "scroll_to", ref: [ref_id], tabId: [id])
-→ read_page (ref_id: [section_ref], tabId: [id])
-```
-
-### Analyzing Activity/Posts
+### Step-by-Step: Extracting Profile Data
 
 ```
-→ find (query: "activity posts", tabId: [id])
-→ Navigate to activity section
-→ read_page to extract post data
-→ Analyze engagement metrics visible on page
+Step 1: Get browser tabs
+→ mcp__chrome-devtools__list_pages
+→ Response includes array of pages with: pageId, url, title
+→ Find page where url contains "linkedin.com/in/"
+
+Step 2: Select LinkedIn tab
+→ mcp__chrome-devtools__select_page (pageId: [found_id])
+→ Page is now the active context for subsequent operations
+
+Step 3: Take accessibility snapshot
+→ mcp__chrome-devtools__take_snapshot
+→ Returns text representation of page with element UIDs like [uid1], [uid2]
+→ UIDs are used for click, hover, and other interactions
+
+Step 4: Take screenshot for visual analysis
+→ mcp__chrome-devtools__take_screenshot
+→ Returns image of current viewport
+→ Analyze profile photo quality, banner design, visual branding
+
+Step 5: Extract specific text (optional)
+→ mcp__chrome-devtools__evaluate_script
+→ function: "() => document.body.innerText"
+→ Returns all visible text on page
 ```
+
+### Step-by-Step: Navigating Profile Sections
+
+LinkedIn lazy-loads content. To access sections below the fold:
+
+```
+Step 1: Take initial snapshot
+→ mcp__chrome-devtools__take_snapshot
+→ Identify UID for section you need (e.g., "Skills" heading)
+
+Step 2: Scroll to section
+→ mcp__chrome-devtools__hover (uid: "[skills_uid]")
+→ OR mcp__chrome-devtools__click (uid: "[show_more_uid]")
+→ Element scrolls into view
+
+Step 3: Wait for content to load
+→ mcp__chrome-devtools__wait_for (text: "Show all", timeout: 5000)
+→ LinkedIn AJAX content finishes loading
+
+Step 4: Re-snapshot for new content
+→ mcp__chrome-devtools__take_snapshot
+→ Now includes previously hidden elements
+```
+
+### Step-by-Step: Analyzing Activity/Posts
+
+```
+Step 1: Navigate to Activity section
+→ From profile, find "Activity" or "Posts" link UID in snapshot
+→ mcp__chrome-devtools__click (uid: "[activity_uid]")
+→ OR mcp__chrome-devtools__navigate_page (url: "linkedin.com/in/[username]/recent-activity/")
+
+Step 2: Wait for posts to load
+→ mcp__chrome-devtools__wait_for (text: "reactions", timeout: 5000)
+
+Step 3: Snapshot activity page
+→ mcp__chrome-devtools__take_snapshot
+→ Extract post content, reaction counts, comment counts
+
+Step 4: Calculate engagement metrics
+→ For each visible post: (reactions + comments + reposts) / impressions × 100
+→ Note: Impressions may not be visible to non-authors
+```
+
+### Step-by-Step: Accessing LinkedIn Analytics Dashboard
+
+LinkedIn Analytics provides key metrics only visible to the profile owner.
+
+```
+Step 1: Navigate to Analytics
+→ mcp__chrome-devtools__navigate_page (url: "https://www.linkedin.com/analytics/")
+
+Step 2: Wait for dashboard to load
+→ mcp__chrome-devtools__wait_for (text: "Profile viewers", timeout: 10000)
+→ If timeout: User may not have analytics access - ask them to navigate manually
+
+Step 3: Capture analytics snapshot
+→ mcp__chrome-devtools__take_snapshot
+→ Extract: Profile views (7d, 90d), Post impressions, Search appearances, Follower count
+
+Step 4: Navigate to detailed views (optional)
+→ Click "Profile viewers" UID for viewer demographics
+→ Click "Post impressions" UID for content performance breakdown
+→ Click "Search appearances" UID for keyword visibility
+```
+
+### Step-by-Step: Capturing SSI Score
+
+The Social Selling Index is a key LinkedIn metric (mandatory in audits).
+
+```
+Step 1: Navigate to SSI page
+→ mcp__chrome-devtools__navigate_page (url: "https://www.linkedin.com/sales/ssi")
+
+Step 2: Check for access
+→ mcp__chrome-devtools__wait_for (text: "Social Selling Index", timeout: 5000)
+→ If timeout: SSI may require Sales Navigator - document as unavailable
+
+Step 3: Capture SSI data
+→ mcp__chrome-devtools__take_snapshot
+→ Extract: Overall score (/100), 4 component scores (/25 each)
+→ Components: Professional Brand, Find Right People, Engage Insights, Build Relationships
+
+Step 4: Capture rankings (if visible)
+→ Industry rank, Network rank (percentile position)
+```
+
+### Step-by-Step: Individual Post Analytics
+
+For detailed engagement data on specific posts (author-only view).
+
+```
+Step 1: From Activity page, find target post
+→ mcp__chrome-devtools__take_snapshot
+→ Locate post by content or date in the snapshot
+
+Step 2: Click to view post details
+→ mcp__chrome-devtools__click (uid: "[post_uid]")
+→ OR click "View analytics" link UID if visible
+
+Step 3: Wait for analytics overlay
+→ mcp__chrome-devtools__wait_for (text: "impressions", timeout: 5000)
+
+Step 4: Capture post-level metrics
+→ mcp__chrome-devtools__take_snapshot
+→ Extract: Impressions, Unique views, Reactions (by type), Comments, Reposts
+→ Extract: Top companies, Top job titles (viewer demographics)
+```
+
+### Step-by-Step: Follower Analytics
+
+For audience understanding and growth tracking.
+
+```
+Step 1: Navigate to Follower Analytics
+→ mcp__chrome-devtools__navigate_page (url: "https://www.linkedin.com/analytics/profile-viewers/followers/")
+→ OR from Analytics dashboard, click "Followers" tab UID
+
+Step 2: Wait for data to load
+→ mcp__chrome-devtools__wait_for (text: "followers", timeout: 5000)
+
+Step 3: Capture follower data
+→ mcp__chrome-devtools__take_snapshot
+→ Extract: Total followers, Growth (7d, 30d), Top companies, Top job titles, Top locations
+
+Step 4: Scroll for historical data (if needed)
+→ mcp__chrome-devtools__hover (uid: "[chart_uid]") to scroll down
+→ Re-snapshot to capture growth chart data
+```
+
+### Playwright MCP Fallback
+
+If Chrome DevTools MCP is unavailable, use Playwright MCP:
+
+| Chrome DevTools | Playwright Equivalent |
+|-----------------|----------------------|
+| `mcp__chrome-devtools__list_pages` | `mcp__playwright__browser_tabs` action: "list" |
+| `mcp__chrome-devtools__select_page` | `mcp__playwright__browser_tabs` action: "select" |
+| `mcp__chrome-devtools__take_snapshot` | `mcp__playwright__browser_snapshot` |
+| `mcp__chrome-devtools__take_screenshot` | `mcp__playwright__browser_take_screenshot` |
+| `mcp__chrome-devtools__navigate_page` | `mcp__playwright__browser_navigate` |
+| `mcp__chrome-devtools__click` | `mcp__playwright__browser_click` |
+| `mcp__chrome-devtools__hover` | `mcp__playwright__browser_hover` |
+| `mcp__chrome-devtools__wait_for` | `mcp__playwright__browser_wait_for` |
+
+### Error Handling Patterns
+
+| Error | Detection | Recovery |
+|-------|-----------|----------|
+| LinkedIn tab not found | `list_pages` returns no matching URL | Ask user: "Please open your LinkedIn profile in Chrome" |
+| Element UID not in snapshot | Click/hover fails with invalid UID | Re-take snapshot, search for alternative element |
+| Content not loading | `wait_for` times out | Scroll manually, increase timeout, try page refresh |
+| Rate limited by LinkedIn | Page shows CAPTCHA or error | Pause 30+ seconds, inform user, proceed slowly |
+| SSI page requires Sales Navigator | linkedin.com/sales/ssi shows paywall | Note as "SSI unavailable" and provide estimation based on profile |
+| Profile is private | Snapshot shows limited content | Document as "Limited visibility - private profile" |
+| Analytics page access denied | Page shows "upgrade" or paywall | Note limited metrics access, use visible profile data only |
+| Post analytics not available | No "View analytics" option on post | User is not post author - can only see public engagement counts |
+| Follower data unavailable | Analytics follower tab empty or restricted | Use visible follower count from profile, note demographics unavailable |
 
 ## Tips for Effective Analysis
 
-1. **Use Claude for Chrome**: Ensure the user has LinkedIn open in their browser before starting analysis
-2. **Check Tab Context First**: Always call `tabs_context_mcp` to get the correct tabId
-3. **Visual + Text Analysis**: Combine `screenshot` for visual elements with `get_page_text` for content
-4. **Check All Sections**: Don't miss Featured, Publications, or Interests sections - use `find` to locate them
-5. **Consider Industry Context**: Benchmarks vary by industry and role
-6. **Focus on Quick Wins**: Prioritize high-impact, low-effort improvements first
-7. **Be Specific**: Provide concrete examples and rewrites, not just general advice
-8. **Set Measurable Goals**: Include specific targets for metrics improvement
-9. **Handle Private Metrics**: Some metrics (profile views, SSI) are only visible to profile owner
-10. **Respect Rate Limits**: Avoid rapid navigation that might trigger LinkedIn's bot detection
+1. **Use Chrome DevTools MCP**: Ensure the user has LinkedIn open in Chrome before starting analysis
+2. **List Pages First**: Always call `mcp__chrome-devtools__list_pages` to verify LinkedIn tab exists
+3. **Snapshot Before Actions**: Always `take_snapshot` before clicking or hovering - you need UIDs
+4. **Visual + Text Analysis**: Combine `take_screenshot` for visual analysis with `take_snapshot` for text
+5. **Handle Lazy Loading**: LinkedIn loads content on scroll - use `hover` to scroll, then re-snapshot
+6. **Consider Industry Context**: Benchmarks vary by industry and role - always classify first
+7. **Focus on Quick Wins**: Prioritize high-impact, low-effort improvements first
+8. **Be Specific**: Provide concrete examples and rewrites, not just general advice
+9. **Set Measurable Goals**: Include specific targets for metrics improvement
+10. **Handle Private Metrics**: Some metrics (profile views, SSI) are only visible to profile owner
+11. **Respect Rate Limits**: Avoid rapid navigation that might trigger LinkedIn's bot detection
+12. **Use Playwright Fallback**: If Chrome DevTools MCP fails, fall back to `mcp__playwright__*` tools
 
 ## Industry-Specific Guidance
 
