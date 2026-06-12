@@ -4,18 +4,25 @@
     "url": "https://github.com/schwepps"
   },
   "name": "skills-tooling",
-  "version": "1.0.0",
-  "description": "Developer tools and automation skills for Claude Code.",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/schwepps/skills.git"
+  "metadata": {
+    "version": "1.0.0",
+    "description": "Developer tools and automation skills for Claude Code.",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/schwepps/skills.git"
+    }
   },
   "plugins": [
     {
       "name": "install-skill",
       "source": "./install-skill",
       "description": "Automate skill package installation and marketplace registration"
+    },
+    {
+      "name": "hermes-tweet",
+      "source": "./hermes-tweet",
+      "description": "Hermes Agent X/Twitter plugin setup and guarded operation"
     }
   ]
 }
