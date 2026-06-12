@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**Documentation-based skills** for Claude Code, Claude Desktop, and any AI tool supporting skills. Specialized workflows for SEO audits, AI search optimization, music creation, smart contract security, LinkedIn personal branding, LinkedIn roasts, and developer tools.
+**Documentation-based skills** for Claude Code, Claude Desktop, and any AI tool supporting skills. Specialized workflows for SEO audits, AI search optimization, music creation, smart contract security, LinkedIn personal branding, LinkedIn roasts, Hermes Agent social tooling, and developer tools.
 
 ---
 
@@ -34,6 +34,7 @@ Find packaged skills in `dist/`, then add to your tool's skills directory.
 | **[install-skill](install-skill/)** | Automate skill package installation and marketplace registration |
 | **[linkedin-personal-branding](linkedin-personal-branding/)** | LinkedIn profile analysis, personal branding audit, and visibility optimization |
 | **[linkedin-roast](linkedin-roast/)** | Hilarious LinkedIn profile roasting with savage but friendly comedy burns |
+| **[hermes-tweet](hermes-tweet/)** | Hermes Agent X/Twitter plugin setup and guarded operation |
 
 ## Usage Examples
 
@@ -71,6 +72,9 @@ Find packaged skills in `dist/`, then add to your tool's skills directory.
 "Install the skill from dist/my-skill.skill"
 "Add a new skill to the marketplace"
 "Unpack and register this skill package"
+"Install Hermes Tweet for Hermes Agent"
+"Configure XQUIK_API_KEY for tweet_read"
+"Enable tweet_action only after I approve the post"
 ```
 
 ## How Skills Work
@@ -114,6 +118,7 @@ Download individual skills directly as ZIP files - no git or command line needed
 | Install Skill | [Download ZIP](https://download-directory.github.io/?url=https://github.com/schwepps/skills/tree/main/install-skill) |
 | LinkedIn Personal Branding | [Download ZIP](https://download-directory.github.io/?url=https://github.com/schwepps/skills/tree/main/linkedin-personal-branding) |
 | LinkedIn Roast | [Download ZIP](https://download-directory.github.io/?url=https://github.com/schwepps/skills/tree/main/linkedin-roast) |
+| Hermes Tweet | [Download ZIP](https://download-directory.github.io/?url=https://github.com/schwepps/skills/tree/main/hermes-tweet) |
 
 *Powered by [download-directory.github.io](https://download-directory.github.io)*
 
@@ -122,7 +127,8 @@ Download individual skills directly as ZIP files - no git or command line needed
 ```
 skills/
 ├── .claude-plugin/
-│   └── marketplace.json     # Skill registry
+│   ├── marketplace.json     # Skill registry
+│   └── marketplace-tooling.json
 ├── scripts/
 │   └── build-skills.sh      # Packaging script
 ├── seo-technical-audit/
@@ -133,6 +139,7 @@ skills/
 ├── install-skill/
 ├── linkedin-personal-branding/
 ├── linkedin-roast/
+├── hermes-tweet/
 └── CLAUDE.md                # Contributor guide
 ```
 
