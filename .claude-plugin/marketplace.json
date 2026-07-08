@@ -43,6 +43,11 @@
       "description": "Automate skill package installation and marketplace registration"
     },
     {
+      "name": "routerbase-model-gateway",
+      "source": "./routerbase-model-gateway",
+      "description": "OpenAI-compatible model gateway routing with RouterBase"
+    },
+    {
       "name": "linkedin-personal-branding",
       "source": "./linkedin-personal-branding",
       "description": "LinkedIn profile analysis, personal branding audit, and visibility optimization"

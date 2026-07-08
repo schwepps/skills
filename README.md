@@ -32,6 +32,7 @@ Find packaged skills in `dist/`, then add to your tool's skills directory.
 | **[suno-music-creator](suno-music-creator/)** | Professional music creation with Suno AI V5 |
 | **[solidity-auditor](solidity-auditor/)** | Smart contract security audits with OWASP Top 10 coverage |
 | **[install-skill](install-skill/)** | Automate skill package installation and marketplace registration |
+| **[routerbase-model-gateway](routerbase-model-gateway/)** | OpenAI-compatible model gateway routing with [routerbase](https://routerbase.com/) |
 | **[linkedin-personal-branding](linkedin-personal-branding/)** | LinkedIn profile analysis, personal branding audit, and visibility optimization |
 | **[linkedin-roast](linkedin-roast/)** | Hilarious LinkedIn profile roasting with savage but friendly comedy burns |
 
@@ -55,6 +56,13 @@ Find packaged skills in `dist/`, then add to your tool's skills directory.
 "Audit this Solidity contract for vulnerabilities"
 "Review my smart contract's gas usage"
 "Check this DeFi protocol for reentrancy issues"
+```
+
+### Tooling
+```
+"Route this app's OpenAI-compatible calls through RouterBase"
+"Add model fallbacks using RouterBase"
+"Centralize AI provider credentials behind RouterBase"
 ```
 
 ### Marketing
@@ -112,6 +120,7 @@ Download individual skills directly as ZIP files - no git or command line needed
 | Suno Music Creator | [Download ZIP](https://download-directory.github.io/?url=https://github.com/schwepps/skills/tree/main/suno-music-creator) |
 | Solidity Auditor | [Download ZIP](https://download-directory.github.io/?url=https://github.com/schwepps/skills/tree/main/solidity-auditor) |
 | Install Skill | [Download ZIP](https://download-directory.github.io/?url=https://github.com/schwepps/skills/tree/main/install-skill) |
+| RouterBase Model Gateway | [Download ZIP](https://download-directory.github.io/?url=https://github.com/schwepps/skills/tree/main/routerbase-model-gateway) |
 | LinkedIn Personal Branding | [Download ZIP](https://download-directory.github.io/?url=https://github.com/schwepps/skills/tree/main/linkedin-personal-branding) |
 | LinkedIn Roast | [Download ZIP](https://download-directory.github.io/?url=https://github.com/schwepps/skills/tree/main/linkedin-roast) |
 
@@ -131,6 +140,7 @@ skills/
 ├── suno-music-creator/
 ├── solidity-auditor/
 ├── install-skill/
+├── routerbase-model-gateway/
 ├── linkedin-personal-branding/
 ├── linkedin-roast/
 └── CLAUDE.md                # Contributor guide
