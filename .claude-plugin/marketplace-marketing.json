@@ -18,6 +18,11 @@
       "description": "LinkedIn profile analysis, personal branding audit, and visibility optimization"
     },
     {
+      "name": "xquik-social-data",
+      "source": "./xquik-social-data",
+      "description": "Xquik REST API and MCP workflows for X social data, monitoring, and webhooks"
+    },
+    {
       "name": "linkedin-roast",
       "source": "./linkedin-roast",
       "description": "LinkedIn profile roasting with savage but friendly comedy burns"

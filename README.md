@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**Documentation-based skills** for Claude Code, Claude Desktop, and any AI tool supporting skills. Specialized workflows for SEO audits, AI search optimization, music creation, smart contract security, LinkedIn personal branding, LinkedIn roasts, and developer tools.
+**Documentation-based skills** for Claude Code, Claude Desktop, and any AI tool supporting skills. Specialized workflows for SEO audits, AI search optimization, music creation, smart contract security, LinkedIn personal branding, X social data, LinkedIn roasts, and developer tools.
 
 ---
 
@@ -33,6 +33,7 @@ Find packaged skills in `dist/`, then add to your tool's skills directory.
 | **[solidity-auditor](solidity-auditor/)** | Smart contract security audits with OWASP Top 10 coverage |
 | **[install-skill](install-skill/)** | Automate skill package installation and marketplace registration |
 | **[linkedin-personal-branding](linkedin-personal-branding/)** | LinkedIn profile analysis, personal branding audit, and visibility optimization |
+| **[xquik-social-data](xquik-social-data/)** | Xquik REST API and MCP workflows for X social data, monitoring, and webhooks |
 | **[linkedin-roast](linkedin-roast/)** | Hilarious LinkedIn profile roasting with savage but friendly comedy burns |
 
 ## Usage Examples
@@ -62,6 +63,9 @@ Find packaged skills in `dist/`, then add to your tool's skills directory.
 "Audit my LinkedIn profile for personal branding"
 "Optimize my LinkedIn headline and About section"
 "Analyze my LinkedIn engagement and content strategy"
+"Set up Xquik MCP for X profile research"
+"Export X followers with Xquik"
+"Send Xquik monitor results to a webhook"
 "Roast this LinkedIn profile"
 "Give me a LinkedIn roast"
 ```
@@ -113,6 +117,7 @@ Download individual skills directly as ZIP files - no git or command line needed
 | Solidity Auditor | [Download ZIP](https://download-directory.github.io/?url=https://github.com/schwepps/skills/tree/main/solidity-auditor) |
 | Install Skill | [Download ZIP](https://download-directory.github.io/?url=https://github.com/schwepps/skills/tree/main/install-skill) |
 | LinkedIn Personal Branding | [Download ZIP](https://download-directory.github.io/?url=https://github.com/schwepps/skills/tree/main/linkedin-personal-branding) |
+| Xquik Social Data | [Download ZIP](https://download-directory.github.io/?url=https://github.com/schwepps/skills/tree/main/xquik-social-data) |
 | LinkedIn Roast | [Download ZIP](https://download-directory.github.io/?url=https://github.com/schwepps/skills/tree/main/linkedin-roast) |
 
 *Powered by [download-directory.github.io](https://download-directory.github.io)*
@@ -132,6 +137,7 @@ skills/
 ├── solidity-auditor/
 ├── install-skill/
 ├── linkedin-personal-branding/
+├── xquik-social-data/
 ├── linkedin-roast/
 └── CLAUDE.md                # Contributor guide
 ```
