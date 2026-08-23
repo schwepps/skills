@@ -1,10 +1,10 @@
 ---
 name: suno-music-creator
-description: Professional music creation with Suno AI V5 and Suno Studio. Use this skill when users want to create songs, playlists, corporate anthems, jingles, workout music, ambient soundscapes, or any AI-generated music. Triggers on requests mentioning Suno, music creation, playlist generation, song composition, or specific music projects like "create a track", "make a playlist", "compose music for", "corporate anthem", "workout mix", or any music production task.
+description: Professional music creation with Suno AI V5 and Suno Studio, with optional API generation through Atlas Cloud. Use this skill when users want to create songs, playlists, corporate anthems, jingles, workout music, ambient soundscapes, or any AI-generated music. Triggers on requests mentioning Suno, Atlas Cloud music generation, music creation, playlist generation, song composition, or specific music projects like "create a track", "make a playlist", "compose music for", "corporate anthem", "workout mix", or any music production task.
 license: MIT
 metadata:
   author: Schwepps
-  version: "1.0.0"
+  version: "1.1.0"
   category: music
   tags: music, suno, ai-music, music-creation, song-creation, audio-generation
 ---
@@ -22,6 +22,22 @@ Professional workflow for creating high-quality music with Suno AI V5 and Suno S
 | Structure & meta-tags | [references/metatags.md](references/metatags.md) |
 | Project templates | [references/project-types.md](references/project-types.md) |
 | Distribution & rights | [references/distribution.md](references/distribution.md) |
+| Atlas Cloud API workflow | [references/atlas-cloud.md](references/atlas-cloud.md) |
+
+## Provider Selection
+
+Use Suno and Suno Studio as the default workflow, especially when the user needs
+interactive editing, stems, MIDI, remastering, or Studio-specific controls.
+
+Use Atlas Cloud only as an optional API path when the user asks for Atlas Cloud,
+programmatic generation, or an automatable request/response workflow. Before using
+that path:
+
+1. Read [references/atlas-cloud.md](references/atlas-cloud.md).
+2. Fetch the live Atlas model catalog and the selected model schema.
+3. Confirm the current per-generation quote with the user before the paid POST.
+4. Submit the generation POST once. Never retry an uncertain submission.
+5. Poll only the returned request ID with bounded GET requests.
 
 ## Plan Availability
 
@@ -69,13 +85,14 @@ Consult [references/metatags.md](references/metatags.md) for structure tags and 
 
 ### 3. Generation Process
 
-1. Generate 2-4 versions per track (V5 is 10x faster)
-2. Select best output based on:
+1. Select Suno Studio (default) or Atlas Cloud (optional API path)
+2. Generate 2-4 versions per track (V5 is 10x faster)
+3. Select best output based on:
    - BPM accuracy (verify with external tool if critical)
    - Vocal clarity and emotion (V5 has authentic vocal tone)
    - Mix quality and instrument separation
    - Adherence to prompt
-3. Apply post-processing:
+4. Apply post-processing:
    - **Extend**: Add sections, fix abrupt endings (use callbacks: "continue with same vibe")
    - **Remaster**: Subtle (uniform quality) / Medium / Wide (more variation)
    - **Crop**: Remove unwanted intro/outro
